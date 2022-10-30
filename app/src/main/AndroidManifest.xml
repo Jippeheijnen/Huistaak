@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Huistaak">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme.Huistaak.NoActionBar"></activity>
-        <activity
             android:name=".InstellingenActivity"
             android:label="@string/title_activity_instellingen" />
         <activity android:name=".taakActivity" />
