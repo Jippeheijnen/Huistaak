@@ -1,7 +1,6 @@
 package com.tacocat.huistaak;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,15 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.charset.StandardCharsets;
 import java.util.Calendar;
-import java.util.stream.Collectors;
 
 public class hoofdActivity extends AppCompatActivity {
 
@@ -33,16 +24,13 @@ public class hoofdActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                //set the event you want to perform when button is clicked
-                //you can go to another activity in your app by creating Intent
-                Intent intent = new Intent(getApplicationContext(), InstellingenActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.action_settings) {//set the event you want to perform when button is clicked
+            //you can go to another activity in your app by creating Intent
+            Intent intent = new Intent(getApplicationContext(), InstellingenActivity.class);
+            startActivity(intent);
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -55,14 +43,10 @@ public class hoofdActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.button);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        button.setOnClickListener(v -> {
 
-                Intent intent = new Intent(getApplicationContext(), taakActivity.class);
-                startActivity(intent);
-
-            }
+            Intent intent = new Intent(getApplicationContext(), taakActivity.class);
+            startActivity(intent);
 
         });
 
