@@ -11,7 +11,7 @@
         android:id="@+id/taakTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="In week 43 moet jij de badkamer doen!"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="48sp"
