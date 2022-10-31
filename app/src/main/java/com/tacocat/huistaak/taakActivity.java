@@ -65,20 +65,20 @@ public class taakActivity extends AppCompatActivity {
                     boolean done = false;
                     while ((line = reader.readLine()) != null && !done) {
                         data = line.split(splitBy);
-                        if (isNumeric(data[0]) && Integer.parseInt(data[0]) <= currentWeek) {
+                        if (isNumeric(data[0]) && Integer.parseInt(data[0]) == currentWeek) {
                             // find the index of the name (and start counting past the week number
                             for (int i = 1; i<data.length; i++) {
                                 if (data[i].equals(name)) {
                                     parsedString = "In week " + currentWeek +
                                             // name from the preferences
-                                            " moet " + name + tasks[i] + " doen!";
+                                            " moet " + name + " " + tasks[i-1] + " doen!";
                                     done = true;
                                     break;
 
                                 }
                             }
                         // todo: fix the blindly adding tasks when the first line of the stream isn't a numeral
-                        } else {
+                        } else if (!isNumeric(data[0])) {
                             // set the first row to be the task names.
                             System.arraycopy(data, 1, tasks, 0, data.length - 1);
                         }
