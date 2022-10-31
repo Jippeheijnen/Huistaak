@@ -71,8 +71,7 @@ public class taakActivity extends AppCompatActivity {
                                 if (data[i].equals(name)) {
                                     parsedString = "In week " + currentWeek +
                                             // name from the preferences
-                                            " moet " + name +
-                                            " de " + tasks[i] + " doen!";
+                                            " moet " + name + tasks[i] + " doen!";
                                     done = true;
                                     break;
 
