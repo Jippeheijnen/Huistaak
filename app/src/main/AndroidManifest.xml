@@ -16,7 +16,7 @@
             android:name=".InstellingenActivity"
             android:label="@string/title_activity_instellingen" />
         <activity android:name=".taakActivity" />
-        <activity android:name=".hoofdActivity">
+        <activity android:exported="true" android:name=".hoofdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
