@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -40,7 +41,9 @@ public class taakActivity extends AppCompatActivity {
             try {
                 // url with the unique roster id
                 String parsedString = "";
-                URL url = new URL("https://testing.tacocat.site/test.txt");
+                String urlString = "https://testing.tacocat.site/" +
+                        preferences.getString("roster_id", ":(") + ".txt";
+                URL url = new URL(urlString);
                 URLConnection conn = url.openConnection();
 
                 HttpURLConnection httpConn = (HttpURLConnection) conn;
@@ -91,6 +94,11 @@ public class taakActivity extends AppCompatActivity {
                     editor.apply();
 
                 // logic errors here
+                } catch (FileNotFoundException e) {
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("taakText", "File not found error");
+                    editor.apply();
+                    e.printStackTrace();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

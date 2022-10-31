@@ -1,14 +1,8 @@
 <resources>
     <!-- Reply Preference -->
     <string-array name="names">
-        <item>Wessel</item>
-        <item>Jippe</item>
-        <item>Rachelle</item>
     </string-array>
 
     <string-array name="name_values">
-        <item>Wessel</item>
-        <item>Jippe</item>
-        <item>Rachelle</item>
     </string-array>
 </resources>

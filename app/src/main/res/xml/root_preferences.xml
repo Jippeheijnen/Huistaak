@@ -2,14 +2,6 @@
 
     <PreferenceCategory app:title="@string/profile_header">
 
-        <ListPreference
-            app:defaultValue=""
-            app:entries="@array/names"
-            app:entryValues="@array/name_values"
-            app:key="name"
-            app:title="@string/your_name_title"
-            app:useSimpleSummaryProvider="true" />
-
         <EditTextPreference
             app:defaultValue=""
             app:title="Rooster ID"
@@ -17,6 +9,15 @@
             app:dialogMessage="Vul hier je unieke rooster code in."
             app:key="roster_id"
             app:summary="De unieke code van je rooster."/>
+
+        <ListPreference
+            app:defaultValue=""
+            app:entries="@array/names"
+            app:entryValues="@array/name_values"
+            app:key="name"
+            app:title="@string/your_name_title"
+            app:summary="Je naam zoals vermeld in het rooster."
+            app:useSimpleSummaryProvider="true" />
 
         <Preference
             app:key="update_roster"
