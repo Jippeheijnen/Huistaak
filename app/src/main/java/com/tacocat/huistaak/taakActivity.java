@@ -69,7 +69,7 @@ public class taakActivity extends AppCompatActivity {
                                     parsedString = "In week " + currentWeek +
                                             // name from the preferences
                                             " moet " + name +
-                                            " de " + tasks[i-1] + " doen!";
+                                            " de " + tasks[i] + " doen!";
                                     done = true;
                                     break;
 
